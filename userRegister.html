@@ -1,0 +1,50 @@
+//Michael Duisenberg
+//CST-126
+//09-12-20
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+form{
+	height: 10em;
+    position: relative;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	background-color:#8BD5EF;
+	width:400px;
+	border:1px solid black;
+}
+
+body{ 
+background-color: grey;
+}
+
+
+</style>
+
+
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+</head>
+<body>
+
+
+
+	<form action="userHandler.php" method="post"> 
+	Username:  <input type="text" name="userName"/><br/>
+	First Name: <input type="text" name="firstName"/><br/>
+	Last Name: <input type="text" name="lastName"/><br/>
+	Email:    <input type="email" name="email"/><br/>
+	Password  <input type="password" name="passWord"/><br/>
+		<input type="submit"/>
+	</form>
+</body>
+</html>
