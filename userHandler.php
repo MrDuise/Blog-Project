@@ -35,11 +35,11 @@
 		<p>
 		<?php
 		//variables are set to the value of the data entered in the form
-			$personFirst = addslashes($_POST["firstName"]);
-			$personLast = addslashes($_POST["lastName"]);
-			$userName = $_POST["userName"];
-			$email = $_POST["email"];
-			$passWord = $_POST["passWord"];
+			$personFirst = addslashes($_GET["firstName"]);
+			$personLast = addslashes($_GET["lastName"]);
+			$userName = $_GET["userName"];
+			$email = $_GET["email"];
+			$passWord = $_GET["passWord"];
 		?>
 			
 			<?php echo "You are now registered."; ?> <br>
