@@ -1,16 +1,17 @@
-//Michael Duisenberg
-//CST-126
-//09-12-20
-//This page handles the form gathering and inserts the data in the database
+<!-- Michael Duisenberg -->
+<!-- CST-126-->
+<!-- 09-12-20-->
+<!-- This page handles the form gathering and inserts the data in the database-->
 
-//html was used around the PHP code in order to add CSS styling. 
+<!-- html was used around the PHP code in order to add CSS styling. -->
 <html>
 	<head>
 		<title> Registration Complete</title>
+		<link rel="stylesheet" href="welcomeStyle.css">	
 		<style>
 		/* centers output on screen */
 				p{
-					height: 10em;
+					height: 6em;
 					position: relative;
 					margin: 0;
 					position: absolute;
@@ -32,6 +33,11 @@
 		
 	</head>
 	<body>
+	
+		<div class="topnav">
+		<a href="userRegister.html">Register</a>
+		<a href= "userLogin.html">Login</a>
+		</div>
 		<p>
 		<?php
 		//variables are set to the value of the data entered in the form
@@ -42,11 +48,6 @@
 			$passWord = $_GET["passWord"];
 		?>
 			
-			<?php echo "You are now registered."; ?> <br>
-			<?php echo "First Name is " . $personFirst;?> <br>
-			<?php echo "Last Name is " . $personLast;?> <br>
-
-
 			<?php
 				$host = "localhost";
 				$username = "root";
@@ -62,7 +63,7 @@
 				if (!$conn) {
 					die("Connection failed: " . mysqli_connect_error());
 				}
-					echo "Connected successfully";
+					echo "Registeration is Complete";
 					echo "<br>";
 
 
@@ -70,7 +71,10 @@
 
                 //informs the user that they are now entered into the system or spits out an error if something went wrong
 				if (mysqli_query($conn, $sql)) {
-					echo "New record created successfully";
+				    echo "Welcome to the Blog of". "<br>";
+					echo "crazy car stories.". "<br>";
+					echo "You can either Login or". "<br>";
+					echo "register a new user.". "<br>";
 					} else {
 						echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 						}
