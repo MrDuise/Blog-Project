@@ -1,7 +1,11 @@
 @charset "ISO-8859-1";
 /* the body styling centers the text to the middle of the screen and changes the background color */
 			body{
-   			 height: 10em;
+			 background-color:#8BD5EF;
+			}
+			
+			p{
+			 height: 10em;
   		  	 position: relative;
    			 margin: 0;
    			 position: absolute;
@@ -9,30 +13,36 @@
     		 left: 50%;
    			 margin-right: -50%;
    			 transform: translate(-50%, -50%);
-			 text-align: center;
-			 background-color:#8BD5EF;
+			 text-align: center;			
+			}
+			
+	/* Navbar code was gotten from w3schools.com*/
+	/*https://www.w3schools.com/howto/howto_js_topnav.asp*/
+			
+			/* Add a black background color to the top navigation */
+			.topnav {
+  			background-color: #333;
+  			overflow: hidden;
 			}
 
-			/* stylying for the regester button  */
-			a.button {
-   			 padding: 15px 25px;
- 			 font-size: 24px;
-			 text-align: center;
- 			 cursor: pointer;
- 			 outline: none;
-  			 color: #fff;
- 			 background-color: #CB0707;
- 			 border: none;
- 			 border-radius: 15px;
-  			 box-shadow: 0 9px #999;
-			 }
+			/* Style the links inside the navigation bar */
+			.topnav a {
+ 			 float: right;
+ 			 color: #f2f2f2;
+ 			 text-align: center;
+  			 padding: 14px 16px;
+ 			 text-decoration: none;
+  			 font-size: 17px;
+			}
 
-			/* changes the color of the button when you hover over it */
-			a.button:hover {background-color: #B74D4D}
-			
-			/* adds a clicking motion to the button */
-			a.button:active {
- 			 background-color: #CB0707;
- 			 box-shadow: 0 5px #666;
-  			 transform: translateY(4px);
+			/* Change the color of links on hover */
+			.topnav a:hover {
+ 			 background-color: #ddd;
+ 			 color: black;
+			}
+
+			/* Add a color to the active/current link */
+			.topnav a.active {
+  			background-color: #4CAF50;
+  			color: white;
 			}
