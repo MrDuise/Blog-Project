@@ -8,26 +8,23 @@
 	<head>
 	<title>Registration Form</title>
 	<!-- style format centers form in the center of the screen, also adds a border -->
+	<link rel="stylesheet" href="welcomeStyle.css">	
+	
 	<style>
-		form{
-		height: 10em;
-    	position: relative;
-    	margin: 0;
-    	position: absolute;
-    	top: 50%;
-    	left: 50%;
-    	margin-right: -50%;
-   		transform: translate(-50%, -50%);
-		text-align: center;
-		background-color:#8BD5EF;
-		width:400px;
-		border:1px solid black;
-		}
-
-		body{ 
-		background-color: grey;
-		}
-
+	form{
+			height: 10em;
+    		position: relative;
+    		margin: 0;
+    		position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		margin-right: -50%;
+   			transform: translate(-50%, -50%);
+			text-align: center;
+			background-color:grey;
+			width:400px;
+			border:1px solid black;
+			}
 	</style>
 
 <meta charset="ISO-8859-1">
@@ -35,12 +32,21 @@
 
 <!-- body section creates the form to get the users information -->
 	<body>
+	
+	<h1>Register Page</h1>
+		<div class="topnav">
+		<a href="index.html">Home</a>
+		<a class="active" href="userRegister.html">Register</a>
+		<a href= "userLogin.html">Login</a>
+		</div>
+	<!-- The required statements make sure that all data fields are entered when the user clicks submit, if they are not, a message pops up,
+	 stating that a required field is missing -->
 		<form action="userHandler.php" method="get"> 
-		Username:  <input type="text" name="userName"/><br/>
-		First Name: <input type="text" name="firstName"/><br/>
-		Last Name: <input type="text" name="lastName"/><br/>
-		Email:    <input type="email" name="email"/><br/>
-		Password  <input type="password" name="passWord"/><br/>
+		Username:  <input type="text" name="userName" required/><br/>
+		First Name: <input type="text" name="firstName" required/><br/>
+		Last Name: <input type="text" name="lastName" required/><br/>
+		Email:    <input type="email" name="email" required/><br/>
+		Password  <input type="password" name="passWord" required/><br/>
 				<input type="submit"/>
 		</form>
 	
