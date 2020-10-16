@@ -8,6 +8,7 @@
 <html>
 	<head>
 		<title> Registration Complete</title>
+		<link rel="icon" href="letter-b-64v-prints.png">
 		<link rel="stylesheet" href="welcomeStyle.css">	
 		<style>
 		/* centers output on screen */
