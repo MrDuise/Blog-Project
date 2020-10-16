@@ -17,25 +17,25 @@
 		<link rel="stylesheet" href="welcomeStyle.css">		
 		</head>
 
-<body>
-<h1>Crazy Car Stories</h1>
+		<body>
+		<h1>Crazy Car Stories</h1>
 
-<?php 
-if (!isset($_SESSION['username'])) {
-    echo "Please login first <a href='userLogin.php'> here </a>";
-    exit;
-}
-?>
-	<div class="topnav"> 
-	<p> Welcome <?php echo $_SESSION['username']; ?> </p>
-	<a href="addPost.php">Add Post</a>
- 	<a href="logOut.php">Logout</a> 
- 	<a href="viewPost.php">View Posts</a>
- 	</div>
+			<?php 
+                if (!isset($_SESSION['username'])) {
+                     echo "Please login first <a href='userLogin.php'> here </a>";
+                        exit;
+                    }
+                ?>
+			<div class="topnav"> 
+			<p> Welcome <?php echo $_SESSION['username']; ?> </p>
+			<a href="addPost.php">Add Post</a>
+ 			<a href="logOut.php">Logout</a> 
+ 			<a href="viewPost.php">View Posts</a>
+ 			</div>
  	
  	
- 	<p><?php include 'footer.php' ?> </p>
+ 			<p><?php include 'footer.php' ?> </p>
 		
-</body>
+		</body>
 
 </html>
