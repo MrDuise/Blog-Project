@@ -13,6 +13,7 @@ session_start();
 <html>
 	<title>Blog Entry</title>
 		<head>
+		<link rel="icon" href="letter-b-64v-prints.png">
 		<link rel="stylesheet" href="welcomeStyle.css">		
 		
 		<style>
@@ -38,24 +39,24 @@ session_start();
 		
 		</head>
 
-<body>
-<h1> Blog Entry </h1>
-			<div class="topnav">
-            <p> Welcome <?php echo $_SESSION['username']; ?> </p>
-			<a href="main-welcome.php">Home</a>
- 			<a href="logOut.php">Logout</a> 
- 			</div>
-<div class = "top-of-form">
-<h2>Add a Post</h2>
-<p>Fill out all of the fields and submit</p>
+		<body>
+				<h1> Blog Entry </h1>
+					<div class="topnav">
+            		<p> Welcome <?php echo $_SESSION['username']; ?> </p>
+					<a href="main-welcome.php">Home</a>
+ 					<a href="logOut.php">Logout</a> 
+ 					</div>
+			<div class = "top-of-form">
+				<h2>Add a Post</h2>
+				<p>Fill out all of the fields and submit</p>
 
-<form action="processAddItem.php" method = "post">
-    <input type="text" name="postTitle" placeholder="Post Title" required/><br/>
-    <textarea rows="5" cols="50" name="blogEntry" placeholder="Blog Entry" required></textarea><br>
+				<form action="processAddItem.php" method = "post">
+   				 <input type="text" name="postTitle" placeholder="Post Title" required/><br/>
+   				 <textarea rows="5" cols="50" name="blogEntry" placeholder="Blog Entry" required></textarea><br>
    
-    <button type="submit">Add</button>
-</form>
-</div>
+    				<button type="submit">Add</button>
+				</form>
+			</div>
 
 
 </body>
