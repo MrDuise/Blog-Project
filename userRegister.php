@@ -8,6 +8,7 @@
 <html>
 	<head>
 	<title>Registration Form</title>
+	<link rel="icon" href="letter-b-64v-prints.png">
 	<!-- style format centers form in the center of the screen, also adds a border -->
 	<link rel="stylesheet" href="welcomeStyle.css">	
 	
