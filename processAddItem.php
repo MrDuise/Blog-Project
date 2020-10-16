@@ -62,6 +62,7 @@ require_once 'myfuncs.php';
 			   
 			     //checks for words that not allowed in the code. the outer for loop controls the array $entryPosts
 			     //the inner for loop controls the $forbiddenWords array
+			     $forbidden = false;
 			    for($a = 0; $a < 2;$a++)
 			    {
 			        for($b = 0; $b <= 2; $b++)
