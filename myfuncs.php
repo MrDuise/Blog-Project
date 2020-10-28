@@ -7,13 +7,13 @@ error_reporting(E_ALL);
 //creates the connection to the database and does the error checking
 function dbConnect()
 {
-    $host = "localhost";
-    $username = "root";
-    $password = "root";
+    $host = "127.0.0.1:49949";
+    $username = "azure";
+    $password = "6#vWHD_$";
     $database_name = "registration";
-    $port = 8889;
     
-    $conn = mysqli_connect($host, $username, $password, $database_name, $port);
+    
+    $conn = mysqli_connect($host, $username, $password, $database_name);
     // Check connection
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
