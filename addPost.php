@@ -1,10 +1,10 @@
 <?php 
 //Michael Duisenberg
-//10-13-20
+//10-25-20
 //CST-126
 //MileStone 3 add post page
 //This page is the form that allows a user to enter a new blog post
-//Version 1.0
+//Version 2.0
 
 session_start();
 ?>
@@ -41,11 +41,7 @@ session_start();
 
 		<body>
 				<h1> Blog Entry </h1>
-					<div class="topnav">
-            		<p> Welcome <?php echo $_SESSION['username']; ?> </p>
-					<a href="main-welcome.php">Home</a>
- 					<a href="logOut.php">Logout</a> 
- 					</div>
+					<?php include_once 'showNavBar.php';?>
 			<div class = "top-of-form">
 				<h2>Add a Post</h2>
 				<p>Fill out all of the fields and submit</p>
