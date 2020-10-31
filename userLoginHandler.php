@@ -1,11 +1,11 @@
 <?php
 session_start(); 
 //Michael Duisenberg
-//10-15-20
+//10-26-20
 //CST-126
 //MileStone 2 login handler
 //connects the login.php page to the server and makes sure that the username and password are correct before letting someone in.
-//Version 2.0
+//Version 3.0
 
 
             require_once 'myfuncs.php';
@@ -37,6 +37,7 @@ session_start();
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['username'] = $row['User_Name'];
                 $_SESSION['userid'] = $row['ID'];
+                $_SESSION['role'] = $row['role'];
                 //include 'main-welcome.php';
                 //this line will cause the page to immeddlety jump to the next page
                  header("Location: main-welcome.php");
