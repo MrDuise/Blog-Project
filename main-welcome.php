@@ -1,10 +1,10 @@
 <?php 
 //Michael Duisenberg
-//10-9-20
+//10-20-20
 //CST-126
 //MileStone 3 after-login welcome page
 //this is the main page that the user is greated with after they login
-//Version 1.0
+//Version 2.0
 ?>
 
 <?php session_start(); ?>
@@ -26,12 +26,7 @@
                         exit;
                     }
                 ?>
-			<div class="topnav"> 
-			<p> Welcome <?php echo $_SESSION['username']; ?> </p>
-			<a href="addPost.php">Add Post</a>
- 			<a href="logOut.php">Logout</a> 
- 			<a href="viewPost.php">View Posts</a>
- 			</div>
+			<?php include_once 'showNavBar.php';?>
  	
  	
  			<p><?php include 'footer.php' ?> </p>
