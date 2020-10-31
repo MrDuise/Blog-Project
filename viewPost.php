@@ -23,18 +23,13 @@ require_once 'myfuncs.php';
 
 	</head>
 	<body>
-		<h1>User <?php echo $_SESSION['username']; ?> Entries </h1>
-		<div class="topnav"> 
-			<p> Welcome <?php echo $_SESSION['username']; ?> </p>
-			<a href="addPost.php">Add Post</a>
- 			<a href="logOut.php">Logout</a> 
- 			<a href="main-welcome.php">Home</a>
- 		</div>
+	<h1>User <?php echo $_SESSION['username']; ?> Entries </h1>
+		<?php include_once 'showNavBar.php';?>
 	<p>
 		<?php 
 
-
-            $sql = "SELECT * FROM `user_posts`";
+		$id = $_SESSION['userid'];
+            $sql = "SELECT * FROM `user_posts` WHERE `users_ID` = '$id'";
 
 
             if(dbConnect())
@@ -57,5 +52,4 @@ require_once 'myfuncs.php';
 
 	<p><?php include 'footer.php' ?> </p>
 	</body>
-</html>
 </html>
