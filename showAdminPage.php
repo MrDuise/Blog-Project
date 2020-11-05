@@ -39,6 +39,8 @@ $users = getAllUser();
 
 include('displayUsers.php');
 
+echo "<br>";
+
 $sql = "SELECT * FROM `user_posts`";
 
 
