@@ -58,6 +58,7 @@
 			    $userName = $_POST["userName"];
 			    $email = $_POST["email"];
 			    $passWord = $_POST["passWord"];
+			    $role = "user";
 			}
 					
 					//if the username chosen is already taken, prompt the user to enter a different one
@@ -75,7 +76,7 @@
 					    //echo "Sorry... password already taken";
 					//}
 					else{
-					    $sql = "INSERT INTO `users` (`User_Name`, `First_Name`, `Last_Name`, `Email`, `Password`) VALUES ('$userName', '$personFirst',                  '$personLast', '$email', '$passWord')";
+					    $sql = "INSERT INTO `users` (`User_Name`, `First_Name`, `Last_Name`, `Email`, `Password`, `role`) VALUES ('$userName', '$personFirst','$personLast', '$email', '$passWord', '$role')";
 					    if (mysqli_query(dbConnect(), $sql)) {
 					        echo "Welcome to the Blog of". "<br>";
 					        echo "crazy car stories.". "<br>";
