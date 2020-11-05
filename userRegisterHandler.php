@@ -37,8 +37,8 @@
 	<body>
 	
 		<div class="topnav">
-		<a href="userRegister.html">Register</a>
-		<a href= "userLogin.html">Login</a>
+		<a href="userRegister.php">Register</a>
+		<a href= "userLogin.php">Login</a>
 		</div>
 		<p>
 		<?php
