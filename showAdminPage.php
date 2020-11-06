@@ -7,11 +7,6 @@
 //Version 1.0
 session_start();
 require_once 'myfuncs.php';
-
-if($_SESSION['role'] != 'admin')
-{
-    echo "Please login in as a admin";
-}
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +28,12 @@ if($_SESSION['role'] != 'admin')
 
 
 <?php
+		if($_SESSION['role'] != 'admin')
+		{
+   			 echo "Please login in as a admin";
+			<a href= "userLogin.php">Login</a>
+				exit;
+		}
 
 require 'utility.php';
 $users = getAllUser();
