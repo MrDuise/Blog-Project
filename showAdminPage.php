@@ -32,7 +32,7 @@ require_once 'myfuncs.php';
 		{
    			 echo "Please login in as a admin";
 			<a href= "userLogin.php">Login</a>
-				exit;
+				
 		}
 
 require 'utility.php';
