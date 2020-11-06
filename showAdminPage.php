@@ -15,9 +15,7 @@ require_once 'myfuncs.php';
 	<?php
 		if($_SESSION['role'] != 'admin')
 		{
-   			 echo "Please login in as a admin";
-			<a href= "userLogin.php">Login</a>
-				
+   			 echo "Please login in as a admin";		
 		}
 		?>
 	<link rel="icon" href="letter-b-64v-prints.png">
