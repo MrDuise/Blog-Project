@@ -8,12 +8,7 @@
 session_start();
 require_once 'myfuncs.php';
 
-		if($_SESSION['role'] != 'admin')
-		{
-   			 echo "Please login in as a admin";
-			<a href= "userLogin.php">Login</a>
-				
-		}
+		
 ?>
 
 <!DOCTYPE html>
