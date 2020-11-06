@@ -6,14 +6,20 @@
 //This page allows the admin to see all the users in the blog, and all the blog posts, then either delete or edit those posts
 //Version 1.0
 session_start();
-require_once 'myfuncs.php';
-
-		
+require_once 'myfuncs.php';		
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
+	<?php
+		if($_SESSION['role'] != 'admin')
+		{
+   			 echo "Please login in as a admin";
+			<a href= "userLogin.php">Login</a>
+				
+		}
+		?>
 	<link rel="icon" href="letter-b-64v-prints.png">
 	<title>  Admin Page </title>
 	<link rel="stylesheet" href="welcomeStyle.css">
