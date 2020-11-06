@@ -12,12 +12,6 @@ require_once 'myfuncs.php';
 <!DOCTYPE html>
 <html>
 	<head>
-	<?php
-		if($_SESSION['role'] != 'admin')
-		{
-   			 echo "Please login in as a admin";		
-		}
-		?>
 	<link rel="icon" href="letter-b-64v-prints.png">
 	<title>  Admin Page </title>
 	<link rel="stylesheet" href="welcomeStyle.css">
@@ -35,7 +29,12 @@ require_once 'myfuncs.php';
 
 <?php
 		
-		
+
+		if($_SESSION['role'] != 'admin')
+		{
+   			 echo "Please login in as a admin";		
+		}
+			
 
 require 'utility.php';
 $users = getAllUser();
