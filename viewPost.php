@@ -13,7 +13,7 @@ require_once 'myfuncs.php';
 <html>
 	<head>
 	<link rel="icon" href="letter-b-64v-prints.png">
-	<title>  Welcome to my blog </title>
+	<title>  Post Viewer </title>
 	<link rel="stylesheet" href="welcomeStyle.css">
 
 
@@ -41,8 +41,20 @@ require_once 'myfuncs.php';
                      while($row = mysqli_fetch_assoc($result))
                     {
                      echo "Post ID: " . $row['ID'] . "<br>";
-                     echo "Post Title: " . $row['Blog_Title'] . "<br>";
-                     echo "Post Entry: " . $row['Blog_Entry'] . "<br>";
+                     echo "Post Title: " . $row['Blog_Title']. " ";
+                     
+                     ?>
+         </p>
+         
+                    
+                     <form action = "viewPostContent.php">
+            		<input type="hidden" name="id" value = "<?php echo $row['ID'];?>"></input>
+           			 <button type="submit">View</button>
+           			 </form>
+                     
+          <p>
+                     <?php
+                     echo "<br>";
                      echo "===========<br>";
                     }
                  }    
