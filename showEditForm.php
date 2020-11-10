@@ -45,7 +45,7 @@ require_once 'myfuncs.php';
 		<?php 
 		
 		$id = $_GET['id'];
-		
+		echo "We would like to edit id " . $id . "<br>";
 		
 		if(dbConnect())
 		{
