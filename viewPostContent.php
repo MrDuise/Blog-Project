@@ -3,8 +3,8 @@
 //Michael Duisenberg
 //11-9-20
 //CST-126
-//MileStone 6 Admin Page
-//This page allows the admin to see all the users in the blog, and all the blog posts, then either delete or edit those posts
+//MileStone 6 View Indivuadel Post page
+//This page displays one post at a time, it also displays any comments on the post as well as the username of who made the comment
 //Version 1.0
 session_start();
 require_once 'myfuncs.php';
@@ -52,6 +52,8 @@ require_once 'myfuncs.php';
 <p>
 <?php
 $id = $_GET['id'];
+$userName = $_GET['userName'];
+
 
 if(dbConnect())
 {
@@ -62,6 +64,30 @@ if(dbConnect())
         while($row = mysqli_fetch_assoc($result))
         {
             echo "Post Entry: " . $row['Blog_Entry'] . "<br>";
+            
+            
+            ?>
+            
+            <form action = "processComments.php">
+            <input type="hidden" name="id" value = "<?php echo $id?>"></input>
+            Comments:<textarea name="comments" rows="5" cols="50"></textarea>
+            <button type="submit"> Submit Comments</button>
+            </form>
+            
+            <?php 
+            
+            $sql_comments = "Select * FROM `user_comments` WHERE `user_posts_id` = '$id'";
+            $result_comments = mysqli_query(dbConnect(), $sql_comments);
+            
+            if($result_comments)
+            {
+                while($row_comments = mysqli_fetch_assoc($result_comments))
+                {
+                    echo $row_comments['comments'] . "<br>";
+                    echo "This comment was made by: " . $userName . "<br>";
+                    //add a line to display the username of the person who made the comment
+                }
+            }
         }
     }
     else
