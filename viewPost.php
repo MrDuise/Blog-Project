@@ -29,8 +29,13 @@ require_once 'myfuncs.php';
 		<?php 
 
 		$id = $_SESSION['userid'];
-            $sql = "SELECT * FROM `user_posts` WHERE `users_ID` = '$id'";
+            $sql = "SELECT * FROM `user_posts`";
             $sql_user = "SELECT * FROM `users` WHERE `ID` = '$id'";//select statement for getting the username out of the database
+            
+           
+           
+            //$postWritter = 
+            
             $result_userName = mysqli_query(dbConnect(), $sql_user);
             $row_user = mysqli_fetch_assoc($result_userName);
             $userName = $row_user['User_Name'];
@@ -43,6 +48,13 @@ require_once 'myfuncs.php';
                 {
                      while($row = mysqli_fetch_assoc($result))
                     {
+                        $userID = $row['users_ID'];
+                        $sql_userPoster = "SELECT *FROM `users` WHERE `ID` = '$userID'";
+                        $resultUsernamePost = mysqli_query(dbConnect(), $sql_userPoster);
+                        $row_username_post = mysqli_fetch_assoc($resultUsernamePost);
+                        $postWritter = $row_username_post['User_Name'];
+                        
+                     echo "This post was written by " . $postWritter . "<br>";
                      echo "Post ID: " . $row['ID'] . "<br>";
                      echo "Post Title: " . $row['Blog_Title']. " ";
                      
