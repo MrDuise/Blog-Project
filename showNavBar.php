@@ -25,6 +25,7 @@
 		
 		<div class="topnav"> 
 			<p> Welcome <?php echo $_SESSION['username']; ?> </p>
+			<a href="searchForm.php">Search Posts</a>
 			<a href="viewPost.php">View User Posts</a>
 			<a href="addPost.php">Add Post</a>
  			<a href="logOut.php">Logout</a> 
