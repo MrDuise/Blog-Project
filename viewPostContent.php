@@ -83,9 +83,15 @@ if(dbConnect())
             {
                 while($row_comments = mysqli_fetch_assoc($result_comments))
                 {
+                    $userID = $row_comments['users_ID'];
+                    $sql_userPoster = "SELECT *FROM `users` WHERE `ID` = '$userID'";
+                    $resultUsernamePost = mysqli_query(dbConnect(), $sql_userPoster);
+                    $row_username_post = mysqli_fetch_assoc($resultUsernamePost);
+                    $postWritter = $row_username_post['User_Name'];
+                    
                     echo $row_comments['comments'] . "<br>";
-                    echo "This comment was made by: " . $userName . "<br>";
-                    //add a line to display the username of the person who made the comment
+                    echo "This comment was made by: " . $postWritter . "<br>";
+                    
                 }
             }
         }
