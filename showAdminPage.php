@@ -40,6 +40,8 @@ $users = getAllUser();
 
 include('displayUsers.php');
 
+echo "<br>";
+
 $sql = "SELECT * FROM `user_posts`";
 
 
@@ -51,7 +53,14 @@ if(dbConnect())
     {
         while($row = mysqli_fetch_assoc($result))
         {
+            $userID = $row['users_ID'];
+            $sql_userPoster = "SELECT *FROM `users` WHERE `ID` = '$userID'";
+            $resultUsernamePost = mysqli_query(dbConnect(), $sql_userPoster);
+            $row_username_post = mysqli_fetch_assoc($resultUsernamePost);
+            $postWritter = $row_username_post['User_Name'];
+            
             echo "Post ID: " . $row['ID'] . "<br>";
+            echo "This post was written by " . $postWritter . "<br>";
             echo "Post Title: " . $row['Blog_Title'] . "<br>";
             echo "Post Entry: " . $row['Blog_Entry'] . "<br>";
             
