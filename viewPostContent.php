@@ -70,14 +70,16 @@ if(dbConnect())
             
             <form action = "processComments.php">
             <input type="hidden" name="id" value = "<?php echo $id?>"></input>
-            Comments:<textarea name="comments" rows="5" cols="50"></textarea>
-            <button type="submit"> Submit Comments</button>
+            Comments:<textarea name="comments" rows="5" cols="50"></textarea><br>
+            Rating:<input type="text" name="Rating" placeholder="Rating 1-10"></input>
+            <button type="submit"> Submit</button>
             </form>
             
             <?php 
             
             $sql_comments = "Select * FROM `user_comments` WHERE `user_posts_id` = '$id'";
             $result_comments = mysqli_query(dbConnect(), $sql_comments);
+            
             
             if($result_comments)
             {
@@ -91,6 +93,10 @@ if(dbConnect())
                     
                     echo $row_comments['comments'] . "<br>";
                     echo "This comment was made by: " . $postWritter . "<br>";
+                    if($row_comments['Ratings'] != 0)
+                    {
+                        echo $postWritter . " rated this post a " . $row_comments['Ratings'];
+                    }
                     
                 }
             }
