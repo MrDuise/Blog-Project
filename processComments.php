@@ -50,22 +50,30 @@ require_once 'myfuncs.php';
 			<p>
 			<?php 
 			
-			//words that are not allowed in blog post or title
+			
 			
 			
 			     if(dbConnect())
 			     {
 			         $entryPosts= array($_GET['comments'], $_GET['id'], $_SESSION['userid']);
+			         $ratings = $_GET['Rating'];
 			     }
 			     
 			    
                    
-                      $sql = "INSERT INTO `user_comments`(`comments`, `user_posts_ID`, `users_ID`) VALUES ('$entryPosts[0]', '$entryPosts[1]','$entryPosts[2]')";
+                      $sql = "INSERT INTO `user_comments`(`comments`,`Ratings`, `user_posts_ID`, `users_ID`) VALUES ('$entryPosts[0]','$ratings', '$entryPosts[1]','$entryPosts[2]')";
                        
+                      
                        if (mysqli_query(dbConnect(), $sql))
                        {
-                           echo "Comment Added";
+                           echo "Comment Added <br>";
+                           if($ratings != null)
+                           {
+                               echo "Rating added<br>";
+                           }
                        }
+                       
+                       
                    
                       
               
